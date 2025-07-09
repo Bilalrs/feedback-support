@@ -5,29 +5,30 @@
   <h2>Information We Collect</h2>
   <ul>
     <li><strong>Profile Data:</strong> name, gender, birthday, and phone number (optional; you choose what to share).</li>
-    <li><strong>Anonymous Encounter Data:</strong> proximity timestamps when you’re within 15 ft of another user for the required duration. These timestamps are collected on-device, then transmitted securely (TLS) to our AWS Lightsail server for processing and storage.</li>
-    <li><strong>Feedback Content:</strong> your 1–5 ratings and freeform comments.</li>
-    <li><strong>Sign in with Apple:</strong> we only receive an opaque Apple identifier; no email or password is stored by us.</li>
+    <li><strong>Location Updates:</strong> your device periodically uploads its GPS location to Apple’s CloudKit service (encrypted in transit).</li>
+    <li><strong>Anonymous Encounter Data:</strong> our AWS Lightsail server reads those CloudKit location records, computes which users were within 15 ft of each other for at least 5 minutes (then apart for 20 minutes), and logs those encounters for processing.</li>
+    <li><strong>Feedback Content:</strong> your 1–5 ratings and freeform comments after an encounter.</li>
+    <li><strong>Sign in with Apple:</strong> we only receive an opaque Apple ID identifier; we do not collect your email or password.</li>
   </ul>
 
   <h2>How We Use Your Data</h2>
   <ul>
     <li>To authenticate you via Sign in with Apple.</li>
-    <li>To detect encounters (15 ft proximity + 5 min dwell + 20 min drift) on our server and trigger notifications.</li>
-    <li>To power the Radar view, Feedback Breakdown, and weekly digest.</li>
-    <li>To send push notifications prompting feedback within 20 min of an encounter.</li>
+    <li>To store and sync your profile data via CloudKit.</li>
+    <li>To detect and record encounters on our AWS server based on those CloudKit location updates.</li>
+    <li>To send you a push notification prompting feedback after each encounter.</li>
+    <li>To compile and deliver weekly feedback every Wednesday at 5 PM.</li>
   </ul>
 
   <h2>Sharing & Security</h2>
-  <p>All data in transit is encrypted via HTTPS/TLS. Encounter data and feedback are stored encrypted at rest on our AWS Lightsail servers. We do not share your personal details or feedback outside the app.</p>
+  <p>All data in transit is encrypted via HTTPS/TLS. Profile data and location updates are stored encrypted at rest in CloudKit; encounter logs and feedback are stored encrypted on our AWS Lightsail servers. We do not share your personal details or feedback with any third parties.</p>
 
   <h2>Your Choices</h2>
   <ul>
-    <li>You can edit or delete your profile (name, gender, birthday, phone) at any time in Settings.</li>
-    <li>You can delete individual feedback items or your entire feedback history via the “Clear History” option.</li>
+    <li>You can edit or delete your profile data (name, gender, birthday, phone) anytime in Edit Profile.</li>
     <li>To opt out of encounter detection, disable Location Services for this app in your device settings.</li>
   </ul>
 
   <h2>Contact Us</h2>
-  <p>Questions? Email <a href="mailto:feedbacktester12@gmail.com">feedbacktester12@gmail.com</a>.</p>
+  <p>If you have questions about this policy, email <a href="mailto:feedbacktester12@gmail.com">feedbacktester12@gmail.com</a>.</p>
 </body>
