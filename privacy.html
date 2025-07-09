@@ -1,32 +1,33 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Privacy Policy — Feedback App</title>
-  <style>
-    body { font-family: sans-serif; max-width: 600px; margin: 3rem auto; line-height: 1.6; }
-    h1 { text-align: center; }
-    a { color: #0366d6; }
-  </style>
-</head>
 <body>
   <h1>Privacy Policy</h1>
   <p>Last updated: July 2025</p>
-  <p>This Privacy Policy describes how “Feedback” (“we”, “us”, or “our”) collects, uses, and shares your information when you use our app.</p>
+
   <h2>Information We Collect</h2>
   <ul>
-    <li><strong>Anonymous Encounter Data:</strong> Proximity timestamps (no personal identifiers).</li>
-    <li><strong>Feedback Content:</strong> Ratings and comments you submit.</li>
+    <li><strong>Profile Data:</strong> name, gender, birthday, and phone number (optional; you choose what to share).</li>
+    <li><strong>Anonymous Encounter Data:</strong> proximity timestamps when you’re within 15 ft of another user for the required duration. These timestamps are collected on-device, then transmitted securely (TLS) to our AWS Lightsail server for processing and storage.</li>
+    <li><strong>Feedback Content:</strong> your 1–5 ratings and freeform comments.</li>
+    <li><strong>Sign in with Apple:</strong> we only receive an opaque Apple identifier; no email or password is stored by us.</li>
   </ul>
+
   <h2>How We Use Your Data</h2>
   <ul>
-    <li>To power anonymous feedback notifications.</li>
-    <li>To sync across your devices via iCloud/CloudKit.</li>
+    <li>To authenticate you via Sign in with Apple.</li>
+    <li>To detect encounters (15 ft proximity + 5 min dwell + 20 min drift) on our server and trigger notifications.</li>
+    <li>To power the Radar view, Feedback Breakdown, and weekly digest.</li>
+    <li>To send push notifications prompting feedback within 20 min of an encounter.</li>
   </ul>
+
   <h2>Sharing & Security</h2>
-  <p>All data is stored encrypted in your iCloud account and is never shared with third parties.</p>
+  <p>All data in transit is encrypted via HTTPS/TLS. Encounter data and feedback are stored encrypted at rest on our AWS Lightsail servers. We do not share your personal details or feedback outside the app.</p>
+
+  <h2>Your Choices</h2>
+  <ul>
+    <li>You can edit or delete your profile (name, gender, birthday, phone) at any time in Settings.</li>
+    <li>You can delete individual feedback items or your entire feedback history via the “Clear History” option.</li>
+    <li>To opt out of encounter detection, disable Location Services for this app in your device settings.</li>
+  </ul>
+
   <h2>Contact Us</h2>
-  <p>If you have questions, email <a href="mailto:feedbacktester12@gmail.com">feedbacktester12@gmail.com</a>.</p>
+  <p>Questions? Email <a href="mailto:feedbacktester12@gmail.com">feedbacktester12@gmail.com</a>.</p>
 </body>
-</html>
